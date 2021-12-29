@@ -147,3 +147,11 @@ const sumDigits = (num) => {
 console.log(sumDigits(42))
 //https://levelup.gitconnected.com/javascript-algorithm-sum-of-all-digits-in-a-number-f1882e323ab1
 
+
+////////////////Pythagoras/////////////
+const calculateSide = (sideA, sideB) => {
+    let sum = Math.pow(sideA, 2) + Math.pow(sideB, 2); //adds exponent to the variable
+    let sideC = Math.sqrt(sum);
+    return sideC
+}
+console.log(calculateSide(8, 6))
