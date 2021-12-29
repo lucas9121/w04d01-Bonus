@@ -135,3 +135,15 @@ const rockPaperScissors = (pl1, pl2) => {
 }
 
 rockPaperScissors(computerMove, usersMove)
+
+///////////Digit Sum//////////////
+const sumDigits = (num) => {
+    const numArr = num.toString().split(""); //separates integer into different strings
+    const result = numArr.reduce((firstDigit, secondDigit) => parseInt(firstDigit) + parseInt(secondDigit)); 
+    //.reduce puts the two strings back together
+    //parseInt turns the strings into integers so they are added together
+    return result
+}
+console.log(sumDigits(42))
+//https://levelup.gitconnected.com/javascript-algorithm-sum-of-all-digits-in-a-number-f1882e323ab1
+
