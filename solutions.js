@@ -136,6 +136,7 @@ const rockPaperScissors = (pl1, pl2) => {
 
 rockPaperScissors(computerMove, usersMove)
 
+
 ///////////Digit Sum//////////////
 const sumDigits = (num) => {
     const numArr = num.toString().split(""); //separates integer into different strings
@@ -155,3 +156,39 @@ const calculateSide = (sideA, sideB) => {
     return sideC
 }
 console.log(calculateSide(8, 6))
+
+
+/////////////////Triangles////////////////
+console.log('right isosceles triangle')
+const argument = 7
+for (let i =1; i <= argument; i++){
+    let str = '#';
+    console.log(str.repeat(i))
+}
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+
+console.log('upside down right isosceles triangle')
+for (let i = argument; i > 0; i--){
+    let str = '#';
+    console.log(str.repeat(i))
+}
+
+//I was looking for a way to solve the isosceles triangle and found a questions that asked to reverse it and wanted to try it.
+//https://github.com/Murray918/Arrays_Loops_Objects-Homework#readme
+//it's the second to last question
+console.log('reverse right isosceles triangle')
+for (let i =1; i <= argument; i++){
+    let str = '#';
+    let triangle = str.repeat(i)
+    console.log(triangle.padStart(argument)) //adds current string until it reaches the deisred length. 
+}
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+
+console.log('reverse upside down right isosceles triangle')
+for (let i = argument; i > 0; i--){
+    let str = '#';
+    let triangle = str.repeat(i)
+    console.log(triangle.padStart(argument))
+}
+
+
