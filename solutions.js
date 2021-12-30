@@ -1,8 +1,8 @@
-//// Verbal Questions ///////
+///////////////////////////////////// Verbal Questions //////////////////////////////////////////
 //1A. parameter is the variable given in the paraenthesis while creating the function.  Arguments is the variable you write in the parenthesis to replace the parameter when you call the funciton.
 //2A. return gives a value for the computer to store, whereas console.log simply logs whatever you place inside it for testing purposes.
 
-///////Palindrome/////////
+////////////////////////////////////////Palindrome////////////////////////////////////////////////
 const checkPalindrome = (str) =>{
     return str.toUpperCase() == str.split('').reverse().join('').toUpperCase()
 }
@@ -19,7 +19,7 @@ const sumArray = (arr) => {
 console.log(sumArray([1,2,3,4,5,6]))
 
 
-///////////Prime Numbers/////////
+////////////////////////////////////////Prime Numbers////////////////////////////////////
 //////////Step One//////////
 //if num is divisable by any number less than or equal to its square root, then false
 const checkPrime = (num) => {
@@ -50,7 +50,7 @@ const printPrimes = (num) => {
 printPrimes(78)
 
 
-////////////////Rock Paper Scissors//////////////
+////////////////////////////////////Rock Paper Scissors////////////////////////////////////
 const choice = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 const randomMove = () => {
     let randomizer = Math.floor(Math.random() * choice.length);
@@ -137,7 +137,7 @@ const rockPaperScissors = (pl1, pl2) => {
 rockPaperScissors(computerMove, usersMove)
 
 
-///////////Digit Sum//////////////
+///////////////////////////Digit Sum////////////////////////////////////
 const sumDigits = (num) => {
     const numArr = num.toString().split(""); //separates integer into different strings
     const result = numArr.reduce((firstDigit, secondDigit) => parseInt(firstDigit) + parseInt(secondDigit)); 
@@ -149,7 +149,7 @@ console.log(sumDigits(42))
 //https://levelup.gitconnected.com/javascript-algorithm-sum-of-all-digits-in-a-number-f1882e323ab1
 
 
-////////////////Pythagoras/////////////
+///////////////////////////////Pythagoras/////////////////////////////
 const calculateSide = (sideA, sideB) => {
     let sum = Math.pow(sideA, 2) + Math.pow(sideB, 2); //adds exponent to the variable
     let sideC = Math.sqrt(sum);
@@ -158,7 +158,7 @@ const calculateSide = (sideA, sideB) => {
 console.log(calculateSide(8, 6))
 
 
-/////////////////Triangles////////////////
+/////////////////////////////Triangles//////////////////////////////
 console.log('right isosceles triangle')
 const argument = 7
 for (let i =1; i <= argument; i++){
@@ -172,6 +172,25 @@ for (let i = argument; i > 0; i--){
     let str = '#';
     console.log(str.repeat(i))
 }
+
+
+/*
+//classmate showed me how to add a break line
+console.log('adding a break line')
+const length = 7
+let triangle = ''
+for (let i = 1; i <= length; i++){
+    triangle += '#'.repeat(i) + '\n'
+}
+
+for (let i = length; i > 0; i--){
+    triangle += '#'.repeat(i) + '\n'
+}
+console.log(triangle)
+*/
+
+
+
 
 //I was looking for a way to solve the isosceles triangle and found a questions that asked to reverse it and wanted to try it.
 //https://github.com/Murray918/Arrays_Loops_Objects-Homework#readme
@@ -192,3 +211,14 @@ for (let i = argument; i > 0; i--){
 }
 
 
+//////////////////////////////////////////"Second" Numbers//////////////////////////////////////////////
+const secondNumbers = (arr) => {
+    let newArray = arr.sort((a,b) => {
+        return a - b;
+    })
+    let secondHighest = newArray[newArray.length - 2];
+    let secondLowest = newArray[1];
+    console.log(`second highest: ${secondHighest} \nsecond lowest: ${secondLowest}`)
+}
+
+secondNumbers([3,5,1,9,12,4,2,6])
