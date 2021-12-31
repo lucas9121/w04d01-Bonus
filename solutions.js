@@ -1,8 +1,15 @@
-///////////////////////////////////// Verbal Questions //////////////////////////////////////////
+/////////////////////////////////////////// Verbal Questions ///////////////////////////////////////////////
 //1A. parameter is the variable given in the paraenthesis while creating the function.  Arguments is the variable you write in the parenthesis to replace the parameter when you call the funciton.
 //2A. return gives a value for the computer to store, whereas console.log simply logs whatever you place inside it for testing purposes.
 
-////////////////////////////////////////Palindrome////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////Palindrome///////////////////////////////////////////////////
 const checkPalindrome = (str) =>{
     return str.toUpperCase() == str.split('').reverse().join('').toUpperCase()
 }
@@ -19,7 +26,14 @@ const sumArray = (arr) => {
 console.log(sumArray([1,2,3,4,5,6]))
 
 
-////////////////////////////////////////Prime Numbers////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////Prime Numbers////////////////////////////////////////////
 //////////Step One//////////
 //if num is divisable by any number less than or equal to its square root, then false
 const checkPrime = (num) => {
@@ -50,7 +64,13 @@ const printPrimes = (num) => {
 printPrimes(78)
 
 
-////////////////////////////////////Rock Paper Scissors////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////Rock Paper Scissors///////////////////////////////////////////
 const choice = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 const randomMove = () => {
     let randomizer = Math.floor(Math.random() * choice.length);
@@ -65,20 +85,21 @@ const arguments = process.argv.slice(2);
 //process.argv allows a comands to be typed on terminal to be passed as arguments.
 //proccess.argv is an array of commands and there are two commands already built into it (reson for .slice)
 const playerMove = () =>{
+    let input = arguments[0].toLowerCase()
     let rock = 'rock'
     let paper = 'paper'
     let scissors = 'scissors'
     let lizard = 'lizard'
     let spock = 'spock'
-    if(arguments == rock){
+    if(input == rock){
         usersMove = choice[0];
-    } else if(arguments == paper){
+    } else if(input == paper){
         usersMove = choice[1];
-    } else if(arguments == scissors){
+    } else if(input == scissors){
         usersMove = choice[2];
-    } else if(arguments == lizard){
+    } else if(input == lizard){
         usersMove = choice[3];
-    } else if(arguments == spock){
+    } else if(input == spock){
         usersMove = choice[4];
     }
 }
@@ -137,7 +158,15 @@ const rockPaperScissors = (pl1, pl2) => {
 rockPaperScissors(computerMove, usersMove)
 
 
-///////////////////////////Digit Sum////////////////////////////////////
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////Digit Sum///////////////////////////////////////////////////
 const sumDigits = (num) => {
     const numArr = num.toString().split(""); //separates integer into different strings
     const result = numArr.reduce((firstDigit, secondDigit) => parseInt(firstDigit) + parseInt(secondDigit)); 
@@ -149,16 +178,38 @@ console.log(sumDigits(42))
 //https://levelup.gitconnected.com/javascript-algorithm-sum-of-all-digits-in-a-number-f1882e323ab1
 
 
-///////////////////////////////Pythagoras/////////////////////////////
+
+
+
+
+
+
+
+//////////////////////////////////////////////Pythagoras///////////////////////////////////////////////////
+const calculateSide = (sideA, sideB) => {
+    let result = Math.hypot(sideA, sideB) //returns the square root of the sum of squares of its arguments
+    return result
+}
+console.log(calculateSide(8, 6))
+
+/*
+//Another option
 const calculateSide = (sideA, sideB) => {
     let sum = Math.pow(sideA, 2) + Math.pow(sideB, 2); //adds exponent to the variable
     let sideC = Math.sqrt(sum);
     return sideC
 }
 console.log(calculateSide(8, 6))
+*/
 
 
-/////////////////////////////Triangles//////////////////////////////
+
+
+
+
+
+
+//////////////////////////////////////////////////Triangles/////////////////////////////////////////////
 console.log('right isosceles triangle')
 const argument = 7
 for (let i =1; i <= argument; i++){
@@ -191,7 +242,6 @@ console.log(triangle)
 
 
 
-
 //I was looking for a way to solve the isosceles triangle and found a questions that asked to reverse it and wanted to try it.
 //https://github.com/Murray918/Arrays_Loops_Objects-Homework#readme
 //it's the second to last question
@@ -211,6 +261,12 @@ for (let i = argument; i > 0; i--){
 }
 
 
+
+
+
+
+
+
 //////////////////////////////////////////"Second" Numbers//////////////////////////////////////////////
 const secondNumbers = (arr) => {
     let newArray = arr.sort((a,b) => {
@@ -222,3 +278,54 @@ const secondNumbers = (arr) => {
 }
 
 secondNumbers([3,5,1,9,12,4,2,6])
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////Unique String//////////////////////////////////////////////
+//I'm not even sure what I'm doing wrong in this one. 
+
+const uniqueString = (str) => {
+    let array = str.split('');
+    let newArr = [];
+    for (let i = 0; i < array.length; i++){
+        if(array.includes(array[i]) !== newArr.includes(array[i])){
+            newArr.push(array[i]);
+        } 
+    }
+    console.log(newArr.join(''))
+}
+uniqueString('icecream')
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////Insert Dash/////////////////////////////////////////////
+const insertDash = (num) => {
+    let str = num.toString().split('');
+    let numArr = []
+    for (let i = 0; i < str.length; i++){
+        numArr.push(parseInt(str[i]))
+        if(numArr[i-1] % 2 !== 0 && i > 0){
+            if(numArr[i] % 2 !== 0){
+                numArr.splice(i, 1,  -Math.abs(numArr[i]));
+            }
+        }
+    }
+    return numArr.join('')
+}
+console.log(insertDash(1392457))
+//https://stackoverflow.com/questions/5574144/positive-number-to-negative-number-in-javascript
