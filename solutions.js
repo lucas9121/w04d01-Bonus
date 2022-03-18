@@ -192,15 +192,15 @@ const calculateSide = (sideA, sideB) => {
 }
 console.log(calculateSide(8, 6))
 
-/*
+
 //Another option
-const calculateSide = (sideA, sideB) => {
+const calculateSide2 = (sideA, sideB) => {
     let sum = Math.pow(sideA, 2) + Math.pow(sideB, 2); //adds exponent to the variable
     let sideC = Math.sqrt(sum);
     return sideC
 }
-console.log(calculateSide(8, 6))
-*/
+console.log(calculateSide2(8, 6))
+
 
 
 
@@ -210,6 +210,7 @@ console.log(calculateSide(8, 6))
 
 
 //////////////////////////////////////////////////Triangles/////////////////////////////////////////////
+////////// right isosceles triangle /////////
 console.log('right isosceles triangle')
 const argument = 7
 for (let i =1; i <= argument; i++){
@@ -218,6 +219,9 @@ for (let i =1; i <= argument; i++){
 }
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
 
+
+
+////////// upside down right isosceles triangle /////////
 console.log('upside down right isosceles triangle')
 for (let i = argument; i > 0; i--){
     let str = '#';
@@ -225,7 +229,6 @@ for (let i = argument; i > 0; i--){
 }
 
 
-/*
 //classmate showed me how to add a break line
 console.log('adding a break line')
 const length = 7
@@ -238,13 +241,11 @@ for (let i = length; i > 0; i--){
     triangle += '#'.repeat(i) + '\n'
 }
 console.log(triangle)
-*/
 
 
 
-//I was looking for a way to solve the isosceles triangle and found a questions that asked to reverse it and wanted to try it.
-//https://github.com/Murray918/Arrays_Loops_Objects-Homework#readme
-//it's the second to last question
+
+////////// reverse right isosceles triangle /////////
 console.log('reverse right isosceles triangle')
 for (let i =1; i <= argument; i++){
     let str = '#';
@@ -253,6 +254,10 @@ for (let i =1; i <= argument; i++){
 }
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
 
+
+
+
+////////// reverse upside down right isosceles triangle /////////
 console.log('reverse upside down right isosceles triangle')
 for (let i = argument; i > 0; i--){
     let str = '#';
@@ -289,8 +294,6 @@ secondNumbers([3,5,1,9,12,4,2,6])
 
 
 //////////////////////////////////////////Unique String//////////////////////////////////////////////
-//I'm not even sure what I'm doing wrong in this one. 
-
 const uniqueString = (str) => {
     let array = str.split('');
     let newArr = [];
